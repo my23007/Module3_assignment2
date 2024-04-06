@@ -1,0 +1,268 @@
+
+NS_PCOM7E November 2023
+Title: Assignment 2 – Security and risk management - Executive Summary.
+Student name: Mohammed Younes
+Student ID: 12693688
+Subject area: Msc in Cyber security – University of Essex
+
+
+
+
+
+
+
+
+
+
+
+ 
+Introduction:
+Cathy's decision to embark on the digitalization process, coupled with the establishment of an international supply chain and automated warehouses worldwide, has garnered attention from high-profile customers such as HRH the King and Prince Albert 2nd of Monaco. However, concerns have been raised regarding potential impacts on product quality and supply chain security. This executive summary aims to assess the probabilities of these changes endangering product quality and availability while providing recommendations to mitigate associated risks.
+Calculations and Assumptions:
+To estimate the risks to product quality and supply chain, we employ a quantitative risk assessment methodology, specifically the Monte Carlo simulation methods. Monte Carlo simulation enables us to assess the probabilities of these failure modes occurring. Olson and Wu (2017) argue that the simulation models like Monte Carlo utilize sets of assumptions related to the model components relationship and can be useful in gaining more insights of systems. Moreover, this method was chosen based on scientific evidence from academic references. For example, Ayu et al (2023) used the Monte Carlo simulation method to predict sales for small medium size companies. Similarly, Leopoulos et al (2006) explored risk managements tools for SMEs and they used the Monte Carlo approach. Moreover, Renna (2013) proposed the Monte Carlo simulation method for investment and growth decisions which is the context of Pampered pets.
+Based on the quantitative analysis, the following potential risks to product quality and supply chain are identified along with their associated probabilities:
+Loss of Quality Risks:
+-	Supply chain disruptions leading to delays in delivery.
+-	Quality control issues in automated warehouses resulting in damaged products
+-	Cybersecurity breaches compromising data integrity 
+
+Supply Chain Risks:
+-	Transportation delays due to customs issues 
+-	Failure of automated warehouse systems causing inventory inaccuracies 
+-	Supplier bankruptcy leading to raw material shortages.
+
+Regarding the probabilities, the assumption was made based on academic references; for instance, Käki et al (2015) examined disruptions in supply chain using probabilistic risk assessment and estimated the supplier impact to be around 19%. Similarly, 
+Vilko el al (2012) studied transportation delays in supply chain, the simulation result yielded a mean value of 17%. Moreover, Hanafiah et al (2022) evaluated the Risk Assessment of Warehouse Operation and estimated the probability to be nearly 19%. Furthermore, Anthony et al (2016) estimated the probability of cybersecurity breach using healthcare data and found that it was close to 11%.
+PERT method was applied to perform the estimation. Below is the formula used:
+ PERT = P + 4*M + O / 6
+where P is the pessimistic estimate under threat conditions, while O is the optimistic estimate during favorable situation, and M is the most likely when both conditions happen (knowledgehut,2024). PERT was applied based on case study by Karabulut (2017) where the author applied the Monte Carlo simulation and PERT approach in one of the planning projects.
+The estimation is carried out for all metrics (transportation delay, supplier reliability, etc.) where a random number between ranges was chosen for the optimistic, pessimistic and most likely. the total was calculated using the formula, next the total was calculated over 1000 attempts using Microsoft Excel's "what if analysis" function. Finally, relevant charts and histograms were plotted to show the distribution and trend. Below are the summary tables, the calculation details and excel sheet are mentioned in Appendix A.
+
+Transportation time
+Transportation time	Assumption: Transportation delays due to customs issues (Probability: 17%)
+Pessimistic	24
+Most likely	20
+Optimistic	14
+Total using PERT	19.66666667
+
+ 
+
+Supplier Reliability
+Supplier Reliability	Assumption: Supply chain disruptions leading to delays in product delivery (Probability: 19%)
+Pessimistic	48
+Most likely	18
+Optimistic	8
+Total using PERT	21.33333333
+
+ 
+Warehouse Efficiency:
+Warehouse Efficiency	Assumption: Failure of automated warehouse systems causing inventory inaccuracies (Probability: 19%)
+Pessimistic	33
+Most likely	18
+Optimistic	9
+Total using PERT	19
+
+ 
+
+Cybersecurity Breach:
+Cybersecurity Breach	Assumption: Cybersecurity breaches compromising product data integrity (Probability: 11%) 
+Pessimistic	22
+Most likely	7
+Optimistic	1
+Total using PERT	8.5
+
+ 
+Finally, overall probability was modeled against those variables using R. However, there is limitation since the data was based on assumptions instead of available historical data. The R program details is in Appendix B.
+Potential Risks and Mitigation strategies according to priority:
+1. Risk of Loss of Quality:
+a. Potential Issues:
+- Quality Control Failures in Automated Warehouses: With the implementation of automated warehouses, there is a risk of quality control failures leading to damaged or defective products. Automated systems may not detect subtle defects or damage during the handling process, resulting in compromised product quality. Giner et al (2023) highlight the demand for efficient warehouses to improve productivity, they argue that defective quantities can cause disruptions
+- Transportation Delays Leading to Product Damage: International supply chain expansion increases the complexity of transportation logistics. Delays in transit, such as customs clearance issues or unexpected disruptions, can lead to prolonged exposure of products to unfavorable conditions, resulting in damage or spoilage. In this context, Paul et al (2019) argue that transportation disruption can be a major cause of business interruptions and create loss in product quality.
+b. Mitigation Strategies:
+- Implement Enhanced Quality Control Measures: Deploy advanced quality control systems within automated warehouses, including machine vision inspection and automated defect detection algorithms. Moreover, it would be advisable to conduct regular audits and inspections to ensure compliance with quality standards.
+- Optimize Transportation Routes and Packaging: Utilize data-driven analytics to optimize transportation routes and schedules, minimizing the risk of delays. Furthermore, it is desirable to invest in robust packaging materials and techniques to protect products during transit, reducing the likelihood of damage
+2. Risk of Supply Chain Issues:
+a. Potential Issues:
+- Transportation Delays: Complex international logistics increase the likelihood of transportation delays due to factors such as customs clearance, inclement weather, or geopolitical instability. Delayed shipments could disrupt the supply chain, which leads to product shortages and customer dissatisfaction.
+- Supplier Bankruptcies: Dependence on a small number of suppliers poses a risk of supply chain disruption in the event of supplier bankruptcies or financial insolvency. Sudden supplier failures can result in raw material shortages, production delays, and increased costs. Gadge et al (2021) examined the supply chain risk related to bankruptcy, they argued that supply chain and sales will get disrupted as the default risk of a manufacturer increases
+- Cybersecurity Breaches: Digitalization introduces vulnerabilities in the supply chain, including the risk of cybersecurity breaches. Unauthorized access to sensitive data, such as customer information or proprietary designs, can compromise business operations and damage reputation.
+b. Mitigation Strategies:
+- Diversify Supplier Base: Classify and onboard multiple suppliers for raw materials and critical components, which reduces the dependency on a single source. In addition, establish contracts with alternative suppliers to ensure continuity of supply in the event of supplier failures.
+- Enhance Cybersecurity Measures: Implement vigorous cybersecurity procedure and protocols, including encryption, access controls, and threat detection systems. Furthermore, conducting regular security audits and employee training to mitigate the risk of cyber threats would be advisable.
+- Establish Contingency Plans: Develop contingency plans for transportation disruptions, including alternative logistics routes and emergency protocols. Moreover, maintain buffer inventory levels to mitigate the impact of unexpected supply chain disruptions.
+It would be equally important for the online shop to be compliant with the GDPR regulations, such as cookie consent, data privacy protection. GDPR compliance is essential for the online business and failure in compliance can imply punitive consequences which can reach a fine of 500,000 pounds (Foulsham et al, 2019).
+Business continuity/ disaster recovery (DR) strategy
+To ensure the business's online presence remains operational in the event of a disaster affecting the shop premises, we recommend implementing a comprehensive Business Continuity/Disaster Recovery (BC/DR) strategy. Andrade et al (2017) highlight on the importance of disaster recovery solution in the current digitized environment to ensure business continuity.
+This high-level strategy should include:
+-	Redundant infrastructure: Deploy redundant servers and data centers to ensure high availability and minimize downtime.
+-	Continuous data replication: Implement real-time data replication to ensure no data loss and minimal downtime in case of a disaster.
+-	Automated failover: Utilize automated failover mechanisms to enable seamless transition to backup systems with less than a 1-minute changeover window.
+-	Regular testing: Conduct regular testing and drills to verify the effectiveness of the DR solution and ensure readiness to handle any potential disasters.
+The design will be based on Disaster Recovery-as-a-Service (DRaaS) which is a cloud-based solution proposed by Andrade et al (2017), and its being adopted by small and medium-sized organizations to ensure business continuity in context of disaster conditions. Moreover, Andrade et al (2017) highlight that this solution has lower operational costs as compared with the traditional solutions in the market.
+ 
+Fig1: proposed solution (Andrade et al, 2017)
+The disaster recovery solution proposed by Andrade et al (2017) has duplicate database servers and web application, and are matching to those that are active or running in the primary cloud or data center. Moreover, Andrade et al (2017) highlight that the storage volumes that are utilized by the main and secondary database servers are always reserved in a synchronized status. Moreover, there are basic components such as database servers and load balancers with auto-scaling in order to ensure high availability for those critical units. Andrade et al (2017) argue that this auto-scaling will benefit the company by allowing them to scale up or down the infrastructure based on the current situation.
+ 
+Fig2: proposed infrastructure (Andrade et al, 2017)
+Andrade et al (2017) explains that the disaster recovery infrastructure should be the same as the primary one in relation to the load balancer, web servers and database server and those are identical to the ones running in the primary infrastructure. In addition, they further highlight that on the occasion of a disaster, the disaster monitor would trigger the failover of the hosted or affected service from the primary into the secondary infrastructure. Once the primary infrastructure is fixed, then the disaster recovery cloud will trigger failback operation and return back to its hot-standby state as argued by Andrade et al (2017). The primary keys, such as the initial cost and the cost of data transfers, should be considered for the best disaster recovery strategy, it’s also important to take the organization's data requirements and disaster recovery goals into account (Alhazmi & Malaiya, 2013). In this context, the downside on this approach is that its costly, however, organizations should make a tradeoff between cost, and effectiveness of recovery (Andrade et al, 2017)
+Regarding the choice of platform and vendor lock-in, consider leveraging cloud-based DR solutions from providers like AWS, Azure, or Google Cloud. These platforms offer scalable infrastructure, global availability, and managed services for DR, reducing the need for extensive upfront investment and maintenance. Moreover vendor-lock in can be avoided by adopting a multi-cloud strategy, where DR resources are spread across multiple cloud providers. This approach enhances resilience and flexibility while mitigating the risk of dependency on a single vendor. Furthermore, choosing solutions that adhere to open standards and provide robust APIs for interoperability. This allows for seamless integration with different platforms and technologies, reducing the risk of being tied to proprietary systems. In this context, Opara-Martins et al (2014) suggest standards bodies, academic practitioners and industry experts should follow the growth of cloud offerings with the purpose of simplifying the interoperability or compatibility among multiple cloud instances. Moreover, they argue that using Standards can be regularly proposed as a way to overcome vendor lock-in. For example, AWS offers a wide range of services for building robust DR solutions, including Amazon S3 for storage, Amazon EC2 for compute, and AWS Backup for data protection. To avoid vendor lock-in, it is advisable to utilize AWS's well-documented APIs and adhere to best practices for cloud architecture design. Furthermore, consider using open-source tools and frameworks that are compatible with multiple cloud platforms.
+
+Conclusion:
+In this report, we conducted a comprehensive risk assessment for Cathy's pet shop business as it undergoes digitalization and expands its operations to encompass an international supply chain and automated warehouses at a global level. The objective was to evaluate the probabilities of fluctuations to the operations endangering both the quality and availability of the company's products, and to design a robust business continuity/disaster recovery (BC/DR) strategy to ensure uninterrupted online presence. The risk assessment identified potential risks to product quality and supply chain security, utilizing quantitative risk modeling approach such as the Monte Carlo simulation. By quantifying the probabilities of various risks occurring, including quality control failures in automated warehouses and transportation delays in the supply chain, we provided actionable recommendations to mitigate these risks. Additionally, a comprehensive BC/DR strategy was designed to ensure continuous online presence and minimal data loss in the event of a disaster affecting the physical shop premises.
+By implementing these recommendations, Cathy's business can proactively address the challenges posed by digitalization and international expansion, ensuring the preservation of product quality, supply chain resilience, and uninterrupted online operations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+References: 
+Alhazmi, O.H. and Malaiya, Y.K. (2013) “Evaluating disaster recovery plans using the cloud,” in Proceedings - Annual Reliability and Maintainability Symposium. Available at: https://doi.org/10.1109/RAMS.2013.6517700.
+Andrade, E. et al. (2017) “Availability modeling and analysis of a disaster-recovery-as-a-service solution,” Computing, 99(10). Available at: https://doi.org/10.1007/s00607-017-0539-8.
+Anthony, M., Ishmael, M., Santa, E., Shemyakin, A., Stanull, G. and Vandeweghe, N., (2016). Estimating probability of a cybersecurity breach. Risk Management, 12.
+Ayu, M., Hadi, S. and Nafiuddin, M.R. (2023) “The Usage of Monte Carlo Simulation to Predict The Sales of Sustainable Batik Products in Small Medium Enterprise,” Tibuana, 6(1). Available at: https://doi.org/10.36456/tibuana.6.1.6315.65-70.
+Foulsham, M., Hitchen, B. and Denley, A., (2019). GDPR: how to achieve and maintain compliance. Routledge.
+Ghadge, A. et al. (2021) “Impact of financial risk on supply chains: a manufacturer-supplier relational perspective,” International Journal of Production Research, 59(23). Available at: https://doi.org/10.1080/00207543.2020.1834638.
+Giner, J. et al. (2023) “A computer vision based approach to reduce system downtimes in an automated high-rack logistics warehouse,” in Procedia CIRP. Available at: https://doi.org/10.1016/j.procir.2023.06.185.
+Hanafiah, R.M. et al. (2022) “An Innovative Risk Matrix Model for Warehousing Productivity Performance,” Sustainability (Switzerland), 14(7). Available at: https://doi.org/10.3390/su14074060.
+Käki, A., Salo, A. and Talluri, S. (2015) “Disruptions in Supply Networks: A Probabilistic Risk Assessment Approach,” Journal of Business Logistics, 36(3). Available at: https://doi.org/10.1111/jbl.12086.
+Karabulut, M. (2017) “Application of Monte Carlo simulation and PERT/CPM techniques in planning of construction projects: A Case Study,” Periodicals of Engineering and Natural Sciences, 5(3). Available at: https://doi.org/10.21533/pen.v5i3.152.
+Knowledgehut (2024). PERT Estimation Technique. Available from: https://www.knowledgehut.com/tutorials/project-management/pert-estimation-technique [Accessed 18 Feb. 2024].
+Leopoulos, V.N., Kirytopoulos, K.A. and Malandrakis, C. (2006) “Risk management for SMEs: Tools to use and how,” Production Planning and Control, 17(3). Available at: https://doi.org/10.1080/09537280500285136.
+Olson, D.L. and Wu, D.D., (2017). Enterprise risk management models (pp. 3-5). Springer Berlin Heidelberg.
+Opara-Martins, J., Sahandi, R. and Tian, F. (2015) “Critical review of vendor lock-in and its impact on adoption of cloud computing,” in International Conference on Information Society, i-Society 2014. Available at: https://doi.org/10.1109/i-Society.2014.7009018.
+Paul, S.K. et al. (2019) “Managing sudden transportation disruptions in supply chains under delivery delay and quantity loss,” Annals of Operations Research, 273(1–2). Available at: https://doi.org/10.1007/s10479-017-2684-z.
+Renna, P. (2013) “Capacity investment decision by Monte Carlo approach in a cooperation network,” International Journal of Production Research, 51(21). Available at: https://doi.org/10.1080/00207543.2013.824628.
+Vilko, J.P.P. and Hallikas, J.M. (2012) “Risk assessment in multimodal supply chains,” in International Journal of Production Economics. Available at: https://doi.org/10.1016/j.ijpe.2011.09.010.
+
+
+
+
+
+APPENDIX A – Monte Carlo Simulation - calculations:
+Detailed Excel showing Monte carlo simulation 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+APPENDIX B – Probability modeling using linear regression in R:
+This is a sample exercise for just educational purposes, however in real life scenarios, data collection, cleaning, transformation should be conducted and the choice of ML model chosen that best fits the data. The example below shows the relationship being insignificant which should not be the case.
+new_dataset <- assignment2_updated2R[,9:13]
+> summary(new_dataset)
+      prob       transportation_delay warehouse_efficiency supplier_reliability
+ Min.   :10.17   Min.   :0.1417       Min.   :0.1033       Min.   :0.2033      
+ 1st Qu.:13.00   1st Qu.:0.1767       1st Qu.:0.1383       1st Qu.:0.2383      
+ Median :14.67   Median :0.1917       Median :0.1533       Median :0.2550      
+ Mean   :14.65   Mean   :0.1925       Mean   :0.1538       Mean   :0.2545      
+ 3rd Qu.:16.33   3rd Qu.:0.2067       3rd Qu.:0.1704       3rd Qu.:0.2700      
+ Max.   :19.17   Max.   :0.2417       Max.   :0.2083       Max.   :0.3083      
+ NA's   :1       NA's   :1            NA's   :1            NA's   :1           
+  cyber_breach    
+ Min.   :0.06833  
+ 1st Qu.:0.10167  
+ Median :0.12000  
+ Mean   :0.11812  
+ 3rd Qu.:0.13500  
+ Max.   :0.16667  
+ NA's   :1        
+> normalised_dataset <- new_dataset %>% summarise(prob_norm=prob/mean(prob))
+Warning message:
+Returning more (or less) than 1 row per `summarise()` group was deprecated in dplyr 1.1.0.
+ℹ Please use `reframe()` instead.
+ℹ When switching from `summarise()` to `reframe()`, remember that `reframe()` always returns
+  an ungrouped data frame and adjust accordingly.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated. 
+> View(normalised_dataset)
+> normalised_dataset <- new_dataset %>% summarise(prob_norm=prob/14.65)
+Warning message:
+Returning more (or less) than 1 row per `summarise()` group was deprecated in dplyr 1.1.0.
+ℹ Please use `reframe()` instead.
+ℹ When switching from `summarise()` to `reframe()`, remember that `reframe()` always returns
+  an ungrouped data frame and adjust accordingly.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated. 
+> View(normalised_dataset)
+> library(readxl)
+> assignment2_updated11 <- read_excel("C:/Users/myounes/Desktop/Essex/3/assignment2_updated11.xlsx", 
++     sheet = "Sheet1")
+New names:
+• `` -> `...3`
+• `` -> `...4`
+• `` -> `...5`
+• `` -> `...6`
+• `` -> `...7`
+• `` -> `...8`
+• `` -> `...9`
+> View(assignment2_updated11)
+> normalised_dataset <- new_dataset %>% summarise(prob_norm=prob/14.65,trans_delay_norm= transportation_delay/0.1925)
+Warning message:
+Returning more (or less) than 1 row per `summarise()` group was deprecated in dplyr 1.1.0.
+ℹ Please use `reframe()` instead.
+ℹ When switching from `summarise()` to `reframe()`, remember that `reframe()` always returns
+  an ungrouped data frame and adjust accordingly.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated. 
+> new_data = assignment2_updated11[,10:14]
+> view(new_data)
+> summary(new_data)
+      prob         transportation         SR               WE               CB         
+ Min.   :0.08167   Min.   :0.1400   Min.   :0.1667   Min.   :0.1117   Min.   :0.06833  
+ 1st Qu.:0.11000   1st Qu.:0.1767   1st Qu.:0.2100   1st Qu.:0.1533   1st Qu.:0.10167  
+ Median :0.12333   Median :0.1933   Median :0.2333   Median :0.1833   Median :0.11833  
+ Mean   :0.12245   Mean   :0.1921   Mean   :0.2325   Mean   :0.1815   Mean   :0.11757  
+ 3rd Qu.:0.13500   3rd Qu.:0.2067   3rd Qu.:0.2554   3rd Qu.:0.2117   3rd Qu.:0.13333  
+ Max.   :0.16167   Max.   :0.2450   Max.   :0.3000   Max.   :0.2467   Max.   :0.16833  
+ NA's   :1         NA's   :1        NA's   :1        NA's   :1        NA's   :1        
+> normalised_dataset <- new_data %>% summarise(prob_norm=prob/0.12245, norm_trans=transportation/0.1921, norm_SR=SR/0.2325, norm_WE= WE/0.1815, norm_CB=CB/0.11757)
+Warning message:
+Returning more (or less) than 1 row per `summarise()` group was deprecated in dplyr 1.1.0.
+ℹ Please use `reframe()` instead.
+ℹ When switching from `summarise()` to `reframe()`, remember that `reframe()` always returns
+  an ungrouped data frame and adjust accordingly.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated. 
+> view(normalised_dataset)
+> result=lm(formula = normalised_dataset$prob_norm ~ normalised_dataset$norm_trans + normalised_dataset$norm_SR + normalised_dataset$norm_WE + normalised_dataset$norm_CB, data = normalised_dataset)
+> summary(result)
+
+Call:
+lm(formula = normalised_dataset$prob_norm ~ normalised_dataset$norm_trans + 
+    normalised_dataset$norm_SR + normalised_dataset$norm_WE + 
+    normalised_dataset$norm_CB, data = normalised_dataset)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.34205 -0.10172 -0.00023  0.10275  0.32784 
+
+Coefficients:
+                              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                    0.90381    0.06345  14.245   <2e-16 ***
+normalised_dataset$norm_trans  0.01209    0.04196   0.288    0.773    
+normalised_dataset$norm_SR     0.03359    0.03531   0.951    0.342    
+normalised_dataset$norm_WE     0.03121    0.02500   1.248    0.212    
+normalised_dataset$norm_CB     0.01931    0.02435   0.793    0.428    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1421 on 995 degrees of freedom
+  (1 observation deleted due to missingness)
+Multiple R-squared:  0.003273,	Adjusted R-squared:  -0.0007341 
+F-statistic: 0.8168 on 4 and 995 DF,  p-value: 0.5145
+
+>
+
